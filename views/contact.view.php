@@ -1,5 +1,5 @@
 <?php require('partials/head.php') ?>
-<?php require('partials/nav.php') ?>
+<?php require('partials/dashboard.php') ?>
 <?php require('partials/banner.php') ?>
 <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 ">
   <thead class="bg-gray-50">  

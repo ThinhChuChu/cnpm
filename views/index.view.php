@@ -1,127 +1,91 @@
-<?php require('partials/head.php') ?>
-<?php require('partials/nav.php') ?>
-<?php require('partials/banner.php') ?>
-<!-- <p>Hello, <?= $_SESSION['user']['email'] ?? 'Guest' ?>. Welcome to the home page.</p> -->
-<div class="m-auto w-max h-max p-3 shadow-slate-900 bg-white-500 border-4 border-gray-300 rounded-lg">
-    <h1 class="font-medium text-2xl py-4 h-1/2">Find tour</h1>
-    <form>
-        <div class="flex items-center space-x-16 font-medium h-1/2">
-            <div class="flex flex-col w-1/5">
-                <label for="location">Location</label>
-                <input type="text" name="location" id="location" class="rounded-md w-52">
-            </div>
-            <div class="flex flex-col w-1/5">
-                <label for="location">Check-in</label>
-                <input type="date" name="location" id="check-in-date" class="rounded-md w-52">
-            </div>
-            <div class="flex flex-col w-1/5">
-                <label for="location">Guest</label>
-                <input type="number" name="guest" id="guest" class="rounded-md w-52">
-            </div>
-            <div class="flex flex-col">
-                <button type="submit" class="bg-green-300 rounded-md px-5 w-52 h-12">Find</button>
-            </div>
+<?php require('home_page/nav.php')?>
+
+	<main class="container mx-auto p-4">
+        <h1 class="text-4xl font-bold mb-4">Tour Name 1</h1>
+        <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+            <p class="text-gray-400">Giá: $1000</p>
+            <p class="text-gray-400">Thời gian: 5 ngày</p>
+            <p class="text-gray-400">Ngày bắt đầu: 01/08/2024</p>
+            <p class="text-gray-400 mt-4">Mô tả: This is a detailed description of the tour. You will experience amazing adventures and beautiful beaches. Enjoy the trip with our professional guides.</p>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Đặt Tour</button>
         </div>
-    </form>
-</div>
-<br>
+    </main>
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+    <div class="flex flex-col md:flex-row -mx-4">
+      <div class="md:flex-1 px-4">
+        <div x-data="{ image: 1 }" x-cloak>
+          <div class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4">
+            <div x-show="image === 1" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
+              <span class="text-5xl">1</span>
+            </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-  <div class="cursor-pointer rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-	<div class="relative flex items-end overflow-hidden rounded-xl">
-	  <img src="https://thumbnails.production.thenounproject.com/gA9eZOvsBYSHrMumgrslmRGoBto=/fit-in/1000x1000/photos.production.thenounproject.com/photos/BCBA88B6-5B41-4B50-A786-E60CAA0ECDA3.jpg" alt="wallpaper" />
+            <div x-show="image === 2" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
+              <span class="text-5xl">2</span>
+            </div>
 
-	  <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
-		<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-		  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-		</svg>
+            <div x-show="image === 3" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
+              <span class="text-5xl">3</span>
+            </div>
 
-		<span class="ml-1 text-sm text-slate-400">4.9</span>
-	  </div>
-	</div>
+            <div x-show="image === 4" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
+              <span class="text-5xl">4</span>
+            </div>
+          </div>
 
-	<div class="mt-1 p-2">
-	  <h2 class="text-slate-700">The Malta Hotel</h2>
-	  <p class="mt-1 text-sm text-slate-400">Italy, Europe</p>
-
-	  <div class="mt-3 flex items-end justify-between">
-		<p>
-		  <span class="text-lg font-bold text-orange-500">$1,421</span>
-		  <span class="text-sm text-slate-400">/night</span>
-		</p>
-
-		<div class="group inline-flex rounded-xl bg-orange-100 p-2 hover:bg-orange-200">
-		  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-400 group-hover:text-orange-500" viewBox="0 0 20 20" fill="currentColor">
-			<path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
-		  </svg>
-		</div>
-	  </div>
-	</div>
-  </div>
-
-  <div class="cursor-pointer rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-	<div class="relative flex items-end overflow-hidden rounded-xl">
-	  <img src="https://thumbnails.production.thenounproject.com/gA9eZOvsBYSHrMumgrslmRGoBto=/fit-in/1000x1000/photos.production.thenounproject.com/photos/BCBA88B6-5B41-4B50-A786-E60CAA0ECDA3.jpg" alt="wallpaper" />
-
-	  <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
-		<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-		  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-		</svg>
-
-		<span class="ml-1 text-sm text-slate-400">4.9</span>
-	  </div>
-	</div>
-
-	<div class="mt-1 p-2">
-	  <h2 class="text-slate-700">The Malta Hotel</h2>
-	  <p class="mt-1 text-sm text-slate-400">Italy, Europe</p>
-
-	  <div class="mt-3 flex items-end justify-between">
-		<p>
-		  <span class="text-lg font-bold text-orange-500">$1,421</span>
-		  <span class="text-sm text-slate-400">/night</span>
-		</p>
-
-		<div class="group inline-flex rounded-xl bg-orange-100 p-2 hover:bg-orange-200">
-		  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-400 group-hover:text-orange-500" viewBox="0 0 20 20" fill="currentColor">
-			<path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
-		  </svg>
-		</div>
-	  </div>
-	</div>
-  </div>
-
-  <div class="cursor-pointer rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-	<div class="relative flex items-end overflow-hidden rounded-xl">
-	  <img src="https://thumbnails.production.thenounproject.com/gA9eZOvsBYSHrMumgrslmRGoBto=/fit-in/1000x1000/photos.production.thenounproject.com/photos/BCBA88B6-5B41-4B50-A786-E60CAA0ECDA3.jpg" alt="wallpaper" />
-	</div>
-
-	<div class="mt-1 p-2">
-	  <h2 class="text-slate-700">The Malta Hotel</h2>
-	  <p class="mt-1 text-sm text-slate-400">Italy, Europe</p>
-
-	  <div class="mt-3 flex items-end justify-between">
-		<p>
-		  <span class="text-lg font-bold text-orange-500">$1,421</span>
-		  <span class="text-sm text-slate-400">/night</span>
-		</p>
-
-		<div class="group inline-flex rounded-xl bg-orange-100 p-2 hover:bg-orange-200">
-		  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-400 group-hover:text-orange-500" viewBox="0 0 20 20" fill="currentColor">
-			<path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
-		  </svg>
-		</div>
-	  </div>
-
-      <p class="mt-1 py-2 text-slate-400">20/10/2024 - 2 days</p>
-      <div class="flex space-x-2 font-medium text-sm p-1">
-        <span class="bg-gray-100 p-1 rounded-md">Tam bien</span>
-        <span class="bg-gray-100 p-1 rounded-md">Cheo thuyen</span>
-        <span class="bg-gray-100 p-1 rounded-md">Buffet</span>
+          <div class="flex -mx-2 mb-4">
+            <template x-for="i in 4">
+              <div class="flex-1 px-2">
+                <button x-on:click="image = i" :class="{ 'ring-2 ring-indigo-300 ring-inset': image === i }" class="focus:outline-none w-full rounded-lg h-24 md:h-32 bg-gray-100 flex items-center justify-center">
+                  <span x-text="i" class="text-2xl"></span>
+                </button>
+              </div>
+            </template>
+          </div>
+        </div>
       </div>
-	</div>
+      <div class="md:flex-1 px-4">
+        <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">Lorem ipsum dolor, sit amet consectetur, adipisicing elit.</h2>
+        <p class="text-gray-500 text-sm">By <a href="#" class="text-indigo-600 hover:underline">ABC Company</a></p>
+
+        <div class="flex items-center space-x-4 my-4">
+          <div>
+            <div class="rounded-lg bg-gray-100 flex py-2 px-3">
+              <span class="text-indigo-400 mr-1 mt-1">$</span>
+              <span class="font-bold text-indigo-600 text-3xl">25</span>
+            </div>
+          </div>
+          <div class="flex-1">
+            <p class="text-green-500 text-xl font-semibold">Save 12%</p>
+            <p class="text-gray-400 text-sm">Inclusive of all Taxes.</p>
+          </div>
+        </div>
+
+        <p class="text-gray-500">Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Vitae exercitationem porro saepe ea harum corrupti vero id laudantium enim, libero blanditiis expedita cupiditate a est.</p>
+
+        <div class="flex py-4 space-x-4">
+          <div class="relative">
+            <div class="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">Qty</div>
+            <select class="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+
+            <svg class="w-5 h-5 text-gray-400 absolute right-0 bottom-0 mb-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+            </svg>
+          </div>
+
+          <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-
-<?php require('partials/footer.php') ?>
+<script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js'></script>
+</body>
+</html>

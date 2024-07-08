@@ -1,18 +1,9 @@
 <?php
 
-$router->get('/', 'index.php')->only('auth');
+$router->get('/', 'index.php');
+$router->get('/admin', 'admin_index.php')->only('auth');
 $router->get('/about', 'about.php')->only('auth');
 $router->get('/contact', 'contact.php')->only('auth');
-
-$router->get('/notes', 'notes/index.php')->only('auth');
-$router->get('/note', 'notes/show.php')->only('auth');
-$router->delete('/note', 'notes/destroy.php')->only('auth');
-
-$router->get('/note/edit', 'notes/edit.php')->only('auth');
-$router->patch('/note', 'notes/update.php')->only('auth');
-
-$router->get('/notes/create', 'notes/create.php')->only('auth');
-$router->post('/notes', 'notes/store.php')->only('auth');
 
 $router->get('/register', 'registration/create.php')->only('guest');
 $router->post('/register', 'registration/store.php')->only('guest');
@@ -34,11 +25,33 @@ $router->post('/categories', 'categories/store.php')->only('auth');
 
 //tours routes
 $router->get('/tours', 'tours/index.php')->only('auth');
-$router->get('/tour', 'tours/show.php')->only('auth');
-$router->delete('/tour', 'tours/destroy.php')->only('auth');
+// $router->get('/tour', 'tours/show.php')->only('auth');
+$router->delete('/tours', 'tours/destroy.php')->only('auth');
 
-$router->get('/tour/edit', 'tours/edit.php')->only('auth');
-$router->patch('/tour', 'tours/update.php')->only('auth');
+$router->get('/tours/edit', 'tours/edit.php')->only('auth');
+$router->patch('/tours', 'tours/update.php')->only('auth');
 
 $router->get('/tours/create', 'tours/create.php')->only('auth');
 $router->post('/tours', 'tours/store.php')->only('auth');
+//users routes
+$router->get('/users', 'users/index.php')->only('auth');
+$router->delete('/users', 'users/destroy.php')->only('auth');
+
+$router->get('/users/edit', 'users/edit.php')->only('auth');
+$router->patch('/users', 'users/update.php')->only('auth');
+
+$router->get('/users/create', 'users/create.php')->only('auth');
+$router->post('/users', 'users/store.php')->only('auth');
+//bookings routes
+$router->get('/bookings', 'bookings/index.php')->only('auth');
+$router->delete('/bookings', 'bookings/destroy.php')->only('auth');
+
+$router->get('/bookings/edit', 'bookings/edit.php')->only('auth');
+$router->patch('/bookings', 'bookings/update.php')->only('auth');
+
+$router->get('/bookings/create', 'bookings/create.php')->only('auth');
+$router->post('/bookings', 'bookings/store.php')->only('auth');
+
+//user interface 
+$router->get('/profile', 'home/profile.php')->only('auth');
+$router->get('/tours_list', 'home/tours.php');

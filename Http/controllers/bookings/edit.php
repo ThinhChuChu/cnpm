@@ -9,12 +9,12 @@ $locations = $db->query('select * from locations ')->get();
 $categories = $db->query('select * from categories ')->get();
 $tour_location = $db->query("select location_id from tour_locations where tour_id = {$_GET['id']} ")->find()['location_id'];
 $tour_categories = $db->query("select category_id from tour_categories where tour_id = {$_GET['id']} ")->get();
-$tour = $db->query('select * from tours where id = :id', [
+$tour = $db->query('select * from bookings where id = :id', [
     'id' => $_GET['id']
 ])->findOrFail();
 
 
-view("tours/edit.view.php", [
+view("bookings/edit.view.php", [
     'heading' => 'Edit tour',
     'locations' => $locations,
     'categories' => $categories,

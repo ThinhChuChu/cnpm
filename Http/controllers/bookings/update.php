@@ -8,7 +8,7 @@ $db = App::resolve(Database::class);
 $errors = [];
 
 
-$db->query('update tours set name = :name ,price = :price, duration = :duration, start_date = :start_date, description = :description where id = :id ', [
+$db->query('update bookings set name = :name ,price = :price, duration = :duration, start_date = :start_date, description = :description where id = :id ', [
     'id' => $_POST['id'],
     'name' => $_POST['name'],
     'price' =>  $_POST['price'],
@@ -33,4 +33,4 @@ foreach ($_POST['categories'] as $category) {
 
 
 // redirect the user
-redirect('/tours');
+redirect('/bookings');

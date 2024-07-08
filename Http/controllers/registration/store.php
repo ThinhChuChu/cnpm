@@ -35,9 +35,13 @@ if ($user) {
         'errors' => $errors
     ]);
 } else {
-    $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
+    $db->query('INSERT INTO users(email, password,full_name,phone_number,address) VALUES(:email, :password,:full_name,:phone_number,:address)', [
         'email' => $email,
-        'password' => password_hash($password, PASSWORD_BCRYPT)
+        'password' => $password,
+        'full_name' => $_POST['full_name'],
+        'phone_number' => $_POST['phone_number'],
+        'address' => $_POST['address'],
+        //'password' => password_harsh($_POST['password'], PASSWORD_BCRYPT)
     ]);
     $user = $db->query('select * from users where email = :email', [
         'email' => $email

@@ -1,5 +1,5 @@
 <?php require base_path('views/partials/head.php') ?>
-<?php require base_path('views/partials/nav.php') ?>
+<?php require base_path('views/partials/dashboard.php') ?>
 <?php require base_path('views/partials/banner.php') ?>
 <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 ">
   <thead class="bg-gray-50">  

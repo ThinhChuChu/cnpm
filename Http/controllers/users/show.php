@@ -5,13 +5,13 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
-var_dump($_POST['id']);
+
 $tour = $db->query('select * from tours where id = :id', [
-    'id' => $_POST['id']
+    'id' => $_GET['id']
 ])->findOrFail();
 
-$db->query('delete from tours where id = :id', [
-    'id' => $_POST['id']
-]);
 
-redirect('/tours');
+view("tours/show.view.php", [
+    'heading' => 'tour',
+    'tour' => $tour
+]);

@@ -12,10 +12,11 @@ class Authenticator
         ])->find();
 
         if ($user) {
-            if (password_verify($password, $user['password'])) {
-                $this->login([
-                    'email' => $email
-                ]);
+            if (($password === $user['password'])) {
+                $_SESSION['user'] = [
+                    'email' => $user['email']
+                ];
+                $_SESSION['admin'] = ($user['type'] === 1) ? true : false;
 
                 return true;
             }
@@ -29,7 +30,6 @@ class Authenticator
         $_SESSION['user'] = [
             'email' => $user['email']
         ];
-
         session_regenerate_id(true);
     }
 

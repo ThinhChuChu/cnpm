@@ -1,22 +1,28 @@
 <?php require base_path('views/partials/head.php') ?>
-<?php require base_path('views/partials/nav.php') ?>
+<?php require base_path('views/partials/dashboard.php') ?>
 <?php require base_path('views/partials/banner.php') ?>
 
 <div class="flex items-center justify-center p-12">
 
   <div class="mx-auto w-full max-w-[550px]">
-    <form action="/tours" method="POST">
+    <form action="/tours" method="POST" enctype="multipart/form-data">
       <div class="mb-5">
         <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
         Tên tour
         </label>
         <input type="text" name="name" id="name" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+        <?php if (isset($errors['name'])) : ?>
+          <p class="text-red-500 text-xs mt-2"><?= $errors['name'] ?></p>
+        <?php endif; ?>
       </div>
       <div class="mb-5">
         <label for="price" class="mb-3 block text-base font-medium text-[#07074D]">
             Giá
         </label>
         <input type="number" name="price" id="price" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+        <?php if (isset($errors['price'])) : ?>
+                <p class="text-red-500 text-xs mt-2"><?= $errors['price'] ?></p>
+         <?php endif; ?>
       </div>
       <div class="mb-5">
         <label for="duration" class="mb-3 block text-base font-medium text-[#07074D]">
@@ -47,8 +53,8 @@
         ></textarea>
       </div>
       <div class="mb-5">
-        <label for="location" class="mb-3 block text-base font-medium text-[#07074D]">Địa điểm</label>
-        <select id="location" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  font-medium">
+        <label class="mb-3 block text-base font-medium text-[#07074D]">Địa điểm</label>
+        <select name="location_id"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  font-medium">
         <option selected>Chọn địa điểm</option>
         <?php foreach ($locations as $location) : ?>
                 <option value="<?= $location['id']?>"><?= $location['name']?></option>
@@ -62,12 +68,17 @@
         <div class="flex flex-wrap items-center justify-between ">
         <?php foreach ($categories as $category) : ?>
             <div class="pb-2">
-            <input type="checkbox" name="categories" value="<?= $category['id']?>" >  <?= $category['name']?></input>
+            <input type="checkbox" name="categories[]" value="<?= $category['id']?>" ><?= $category['name']?></input>
             </div>
         <?php endforeach; ?> 
         </div>
       </div>
+      <div class="mb-5">
+        <label class="block mb-2 text-md font-medium text-gray-900 " for="thumb">Thumbnail</label>
+      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 p-2 focus:outline-none" name="thumb" id="thumb" type="file">
       
+
+      </div>
       <div>
         <button type="submit" class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">
           Thêm

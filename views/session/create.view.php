@@ -44,6 +44,8 @@
                     <?php endif; ?>
                 </ul>
             </form>
+
+           <a href="/register">No acc ? register</a>
         </div>
     </div>
 </main>

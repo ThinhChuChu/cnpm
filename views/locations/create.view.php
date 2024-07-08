@@ -1,5 +1,5 @@
 <?php require base_path('views/partials/head.php') ?>
-<?php require base_path('views/partials/nav.php') ?>
+<?php require base_path('views/partials/dashboard.php') ?>
 <?php require base_path('views/partials/banner.php') ?>
 
 <div class="flex items-center justify-center p-12">

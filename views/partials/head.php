@@ -6,6 +6,6 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 </head>
 
-<body class="h-full">
+<body class="h-full ">
    
-    <div class="flex flex-row inset-y-0 h-screen w-full">
+    <div class="flex flex-row inset-y-0 h-screen w-full overflow-hidden ">
