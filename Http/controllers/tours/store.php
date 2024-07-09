@@ -21,13 +21,13 @@ if (! empty($errors)) {
 $db->query('INSERT INTO tours(name, description, price, duration, start_date,thumb) VALUES(:name, :description,:price, :duration, :start_date,:thumb)', [
     'name' => $_POST['name'],
     'description' => $_POST['description'],
-    'price' => $_POST['price'],
+    'price' => $_POST['price'],                                         
     'duration' => $_POST['duration'],
     'start_date' => $_POST['start_date'],
     'thumb' => $_FILES['thumb']['name'],
 ]);
 
-move_uploaded_file($_FILES['thumb']["temp_name"],"img".$_FILES["thumb"]["name"]);
+move_uploaded_file($_FILES['thumb']["tmp_name"],"img/".$_FILES["thumb"]["name"]);
 
 $name = $_POST['name'];
 $tour_id = $db->query("SELECT id from tours where name = '$name'")->find()["id"];

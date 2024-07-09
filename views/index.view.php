@@ -1,91 +1,30 @@
 <?php require('home_page/nav.php')?>
 
 	<main class="container mx-auto p-4">
-        <h1 class="text-4xl font-bold mb-4">Tour Name 1</h1>
-        <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-            <p class="text-gray-400">Giá: $1000</p>
-            <p class="text-gray-400">Thời gian: 5 ngày</p>
-            <p class="text-gray-400">Ngày bắt đầu: 01/08/2024</p>
-            <p class="text-gray-400 mt-4">Mô tả: This is a detailed description of the tour. You will experience amazing adventures and beautiful beaches. Enjoy the trip with our professional guides.</p>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Đặt Tour</button>
-        </div>
-    </main>
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-    <div class="flex flex-col md:flex-row -mx-4">
-      <div class="md:flex-1 px-4">
-        <div x-data="{ image: 1 }" x-cloak>
-          <div class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4">
-            <div x-show="image === 1" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-              <span class="text-5xl">1</span>
-            </div>
-
-            <div x-show="image === 2" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-              <span class="text-5xl">2</span>
-            </div>
-
-            <div x-show="image === 3" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-              <span class="text-5xl">3</span>
-            </div>
-
-            <div x-show="image === 4" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-              <span class="text-5xl">4</span>
-            </div>
-          </div>
-
-          <div class="flex -mx-2 mb-4">
-            <template x-for="i in 4">
-              <div class="flex-1 px-2">
-                <button x-on:click="image = i" :class="{ 'ring-2 ring-indigo-300 ring-inset': image === i }" class="focus:outline-none w-full rounded-lg h-24 md:h-32 bg-gray-100 flex items-center justify-center">
-                  <span x-text="i" class="text-2xl"></span>
-                </button>
-              </div>
-            </template>
-          </div>
-        </div>
+  <div class="bg-gray-800 p-4 rounded-lg shadow-md flex h-48 h-max">
+    <img src="img/dnq.png" class="h-[150px] mr-3 w-60" alt="">
+    <div class="text-gray-400">
+      <p class="">Ha long</p>
+      <p class="">price: $1000</p>
+      <p class="">Thời gian: 5 ngày</p>
+      <p class="">Ngày bắt đầu: 01/08/2024</p>
+      <div class="flex space-x-3">
+        <form action="/bookings">
+          <button type="submit" class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 rounded mt-4">Book</button>
+        </form>
+        <form action="/cart">
+          <button class="bg-red-300 hover:bg-red-500 text-white font-bold py-2 px-4 rounded mt-4">cancel</button>
+        </form>
       </div>
-      <div class="md:flex-1 px-4">
-        <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">Lorem ipsum dolor, sit amet consectetur, adipisicing elit.</h2>
-        <p class="text-gray-500 text-sm">By <a href="#" class="text-indigo-600 hover:underline">ABC Company</a></p>
 
-        <div class="flex items-center space-x-4 my-4">
-          <div>
-            <div class="rounded-lg bg-gray-100 flex py-2 px-3">
-              <span class="text-indigo-400 mr-1 mt-1">$</span>
-              <span class="font-bold text-indigo-600 text-3xl">25</span>
-            </div>
-          </div>
-          <div class="flex-1">
-            <p class="text-green-500 text-xl font-semibold">Save 12%</p>
-            <p class="text-gray-400 text-sm">Inclusive of all Taxes.</p>
-          </div>
-        </div>
-
-        <p class="text-gray-500">Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Vitae exercitationem porro saepe ea harum corrupti vero id laudantium enim, libero blanditiis expedita cupiditate a est.</p>
-
-        <div class="flex py-4 space-x-4">
-          <div class="relative">
-            <div class="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">Qty</div>
-            <select class="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-
-            <svg class="w-5 h-5 text-gray-400 absolute right-0 bottom-0 mb-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
-            </svg>
-          </div>
-
-          <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white">
-            Add to Cart
-          </button>
-        </div>
-      </div>
+    </div>
+    <div class="text-gray-400 ml-32">
+      <p>Đơn giá: 1000$ </p>
+      <p>Số người: 3 </p>
+      <p>Tổng cộng: 3000$ </p>
     </div>
   </div>
-</div>
-<script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js'></script>
+    </main>
+	
 </body>
 </html>

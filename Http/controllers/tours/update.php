@@ -6,16 +6,17 @@ use Core\Validator;
 
 $db = App::resolve(Database::class);
 $errors = [];
-
-
-$db->query('update tours set name = :name ,price = :price, duration = :duration, start_date = :start_date, description = :description where id = :id ', [
+$db->query('update tours set name = :name ,price = :price, duration = :duration, start_date = :start_date, description = :description, thumb = :thumb where id = :id ', [
     'id' => $_POST['id'],
     'name' => $_POST['name'],
     'price' =>  $_POST['price'],
     'duration' => $_POST['duration'],
     'start_date' => $_POST['start_date'],
     'description'=> $_POST['description'],
+    'thumb' => $_FILES['thumb']['name'],
+
 ]);
+move_uploaded_file($_FILES['thumb']["tmp_name"],"img/".$_FILES["thumb"]["name"]);
 
 $db->query('Update tour_locations set location_id = :location_id where tour_id = :tour_id',[
     'tour_id' => $_POST['id'],

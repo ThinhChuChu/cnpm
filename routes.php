@@ -2,8 +2,6 @@
 
 $router->get('/', 'index.php');
 $router->get('/admin', 'admin_index.php')->only('auth');
-$router->get('/about', 'about.php')->only('auth');
-$router->get('/contact', 'contact.php')->only('auth');
 
 $router->get('/register', 'registration/create.php')->only('guest');
 $router->post('/register', 'registration/store.php')->only('guest');
@@ -25,7 +23,7 @@ $router->post('/categories', 'categories/store.php')->only('auth');
 
 //tours routes
 $router->get('/tours', 'tours/index.php')->only('auth');
-// $router->get('/tour', 'tours/show.php')->only('auth');
+$router->get('/tour', 'tours/show.php')->only('auth');
 $router->delete('/tours', 'tours/destroy.php')->only('auth');
 
 $router->get('/tours/edit', 'tours/edit.php')->only('auth');
@@ -55,3 +53,9 @@ $router->post('/bookings', 'bookings/store.php')->only('auth');
 //user interface 
 $router->get('/profile', 'home/profile.php')->only('auth');
 $router->get('/tours_list', 'home/tours.php');
+$router->get('/tours_list/tour', 'home/tour.php');
+
+//cart interface
+$router->get('/cart', 'cart/index.php');
+$router->post('/cart', 'cart/store.php')->only('auth');
+$router->delete('/cart', 'cart/destroy.php')->only('auth');

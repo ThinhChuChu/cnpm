@@ -14,6 +14,7 @@
             <ul class="flex w-1/3 justify-between space-x-3">
                 <li><a href="/" class="hover:text-gray-400">Home</a></li>
                 <li><a href="/tours_list" class="hover:text-gray-400">Tourlist</a></li>
+                <li><a href="/cart" class="hover:text-gray-400">Cart</a></li>
                 <?php  if (isset($_SESSION['admin']) and $_SESSION['admin']===true ) : ?>
                    <li><a href="/admin" class="hover:text-gray-400">ADMIN</a></li>
                 <?php endif;?>

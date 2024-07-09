@@ -54,7 +54,7 @@
       </div>
       <div class="mb-5">
         <label class="mb-3 block text-base font-medium text-[#07074D]">Địa điểm</label>
-        <select name="location_id"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  font-medium">
+        <select name="location_id"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  font-medium" >
         <option selected>Chọn địa điểm</option>
         <?php foreach ($locations as $location) : ?>
                 <option value="<?= $location['id']?>"><?= $location['name']?></option>
@@ -75,9 +75,7 @@
       </div>
       <div class="mb-5">
         <label class="block mb-2 text-md font-medium text-gray-900 " for="thumb">Thumbnail</label>
-      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 p-2 focus:outline-none" name="thumb" id="thumb" type="file">
-      
-
+        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 p-2 focus:outline-none" name="thumb" id="thumb" type="file" required  accept="image/*">
       </div>
       <div>
         <button type="submit" class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">

@@ -7,6 +7,7 @@
   <thead class="bg-gray-50">  
     <tr>
       <th scope="col" class="px-6 py-4 font-medium text-gray-900">ID</th>
+      <th scope="col" class="px-6 py-4 font-medium text-gray-900">Thumb</th>
       <th scope="col" class="px-6 py-4 font-medium text-gray-900">Tên</th>
       <th scope="col" class="px-6 py-4 font-medium text-gray-900">Giá</th>
       <th scope="col" class="px-6 py-4 font-medium text-gray-900">Thời gian</th>
@@ -20,6 +21,9 @@
     <tr class="hover:bg-gray-50">
       <td class="  px-6 py-4 font-normal text-gray-900">
           <div class="font-medium text-gray-700"><?= $tour['id'] ?? '1' ?></div>
+      </td>
+      <td class="px-6 py-4">
+          <img src="img/<?= $tour['thumb']?>" class="rounded-2xl w-[100px] h-[70px]" alt="thumb-img">
       </td>
       <td class="px-6 py-4">
         <div class="font-medium text-gray-700"><?= $tour['name'] ?? '1'?><div>

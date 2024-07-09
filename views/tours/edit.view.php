@@ -5,7 +5,7 @@
 <div class="flex items-center justify-center p-12">
 
   <div class="mx-auto w-full max-w-[550px]">
-    <form action="/tours" method="POST">
+    <form action="/tours" method="POST" enctype="multipart/form-data" >
     <input type="hidden" name="_method" value="PATCH">
     <input type="hidden" name="id" value="<?= $tour['id'] ?>">
       <div class="mb-5">
@@ -80,7 +80,11 @@
         <?php endforeach; ?> 
         </div>
       </div>
-      
+      <div class="mb-5">
+        <label class="block mb-2 text-md font-medium text-gray-900 " for="thumb">Thumbnail</label>
+        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 p-2 focus:outline-none" name="thumb" id="thumb" type="file" required  accept="image/*">
+        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 p-2 focus:outline-none" name="old_thumb"  type="hidden" value="<?= $tour['thumb'] ?>">
+      </div>
       <div>
         <button type="submit" class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">
           Sửa

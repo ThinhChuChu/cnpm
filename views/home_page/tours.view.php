@@ -5,14 +5,16 @@
             <!-- Tour Item 1 -->
             <?php foreach ($tours as $tour) : ?>
                 <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-                <a href="tour?id=<?= $tour['id']?>" >
+                <a href="/tour?id=<?= $tour['id']?>" >
                     
-                    <img src="img/<?= $tour['thumb']?>" class="rounded-2xl" alt="thumb-img">
+                    <img src="img/<?= $tour['thumb']?>" class="rounded-2xl w-full h-[200px]" alt="thumb-img">
                     
                     <h2 class="text-2xl font-bold mb-2"><?= $tour['name']?></h2>
                     <p class="text-gray-400">Price: <?= $tour['price']?></p>
+                    <p class="text-gray-400">Location: <?= $tour['location']?></p>
                     <p class="text-gray-400">Duration: <?= $tour['duration']?></p>
                     <p class="text-gray-400">Start: <?= $tour['start_date']?></p>
+
                     
                     <div class="mt-2"> 
                         <?php $categories = $db->query("select name from categories where id in (select category_id from tour_categories where tour_id = {$tour['id']}) ")->get() ?> 

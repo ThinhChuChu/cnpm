@@ -25,7 +25,7 @@
         <div class="font-medium text-gray-700"><?= $booking['tour_id'] ?? '1'?><div>
       </td>
       <td class="  px-6 py-4 font-normal text-gray-900">
-          <div class="font-medium text-gray-700"><?= $booking['user_id'].'$' ?? '1' ?></div>
+          <div class="font-medium text-gray-700"><?= $booking['user_id'] ?? '1' ?></div>
       </td>
       <td class="px-6 py-4">
         <div class="font-medium text-gray-700"><?= $booking['num_of_people'].' ngày' ?? '1'?><div>
@@ -34,7 +34,7 @@
           <div class="font-medium text-gray-700"><?= $booking['booking_date'] ?? '1' ?></div>
       </td>
       <td class=" px-6 py-4 font-normal text-gray-900">
-          <div class="font-medium text-gray-700"><?= $booking['status'] ?? '1' ?></div>
+          <p class="font-medium text-gray-700 rounded-md <?php if ($booking['status']=== 'done') echo 'bg-green-400'; else echo 'bg-gray-400'?> "><?= $booking['status'] ?? '1' ?></p>
       </td>
       <td class="px-6 py-4">
         <div class="flex justify-around gap-4">
