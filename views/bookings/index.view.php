@@ -28,7 +28,7 @@
           <div class="font-medium text-gray-700"><?= $booking['user_id'] ?? '1' ?></div>
       </td>
       <td class="px-6 py-4">
-        <div class="font-medium text-gray-700"><?= $booking['num_of_people'].' ngày' ?? '1'?><div>
+        <div class="font-medium text-gray-700"><?= $booking['num_of_people']?? '1'?> người <div>
       </td>
       <td class=" px-6 py-4 font-normal text-gray-900">
           <div class="font-medium text-gray-700"><?= $booking['booking_date'] ?? '1' ?></div>

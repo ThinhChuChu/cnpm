@@ -14,5 +14,5 @@ $db->query('INSERT INTO bookings(tour_id, user_id, num_of_people) VALUES(:tour_i
     'num_of_people' => $_POST['num_of_people'],
  
 ]);
-header('location: /bookings');
+header('location: /profile');
 die();
