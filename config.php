@@ -7,6 +7,4 @@ return [
         'dbname' => 'travel',
         'charset' => 'utf8mb4'
     ],
-
-    //
 ];

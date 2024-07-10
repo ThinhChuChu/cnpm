@@ -28,7 +28,7 @@
                     <p class="text-gray-400">Duration: <?= $tour['duration']?></p>
                     <p class="text-gray-400">Start: <?= $tour['start_date']?></p>
 
-                    
+                
                     <div class="mt-2"> 
                         <?php $categories = $db->query("select name from categories where id in (select category_id from tour_categories where tour_id = {$tour['id']}) ")->get() ?> 
                             <?php foreach ($categories as $category) : ?>
